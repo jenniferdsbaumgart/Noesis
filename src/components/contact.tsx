@@ -9,7 +9,7 @@ export function Contact() {
         </div>
 
         <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-          Interested in Athena?
+          Interested in Noesis?
         </h2>
         <p className="mt-4 text-zinc-400">
           Whether you&apos;re exploring knowledge management for your organisation,
@@ -19,14 +19,14 @@ export function Contact() {
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="mailto:contact@athena-platform.io"
+            href="mailto:contact@noesis-platform.io"
             className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-accent-500"
           >
             Get in Touch
             <ArrowUpRight size={16} />
           </a>
           <a
-            href="https://github.com/your-org/athena"
+            href="https://github.com/your-org/noesis"
             className="inline-flex items-center gap-2 rounded-lg border border-zinc-800 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-zinc-600 hover:text-white"
             target="_blank"
             rel="noopener noreferrer"

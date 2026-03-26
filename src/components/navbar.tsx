@@ -4,9 +4,9 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="#" className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600">
-            <span className="text-sm font-bold text-white">A</span>
+            <span className="text-sm font-bold text-white">N</span>
           </div>
-          <span className="text-lg font-semibold tracking-tight">Athena</span>
+          <span className="text-lg font-semibold tracking-tight">Noesis</span>
         </a>
 
         <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">

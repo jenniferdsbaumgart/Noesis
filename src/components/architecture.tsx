@@ -77,9 +77,9 @@ export function Architecture() {
               <div className="flex items-center gap-3">
                 <span className="w-28 shrink-0 text-right text-zinc-600">packages</span>
                 <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="zinc">@athena/rag</Tag>
-                  <Tag colour="zinc">@athena/connectors</Tag>
-                  <Tag colour="zinc">@athena/shared</Tag>
+                  <Tag colour="zinc">@noesis/rag</Tag>
+                  <Tag colour="zinc">@noesis/connectors</Tag>
+                  <Tag colour="zinc">@noesis/shared</Tag>
                 </div>
               </div>
             </div>
@@ -98,7 +98,7 @@ export function Architecture() {
           />
           <DecisionCard
             title="Shared Type System"
-            description="@athena/shared provides types, validators, and constants across all apps. Single source of truth, enforced at compile time."
+            description="@noesis/shared provides types, validators, and constants across all apps. Single source of truth, enforced at compile time."
           />
         </div>
       </div>

@@ -4,9 +4,9 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
         <div className="flex items-center gap-2.5">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-accent-600">
-            <span className="text-xs font-bold text-white">A</span>
+            <span className="text-xs font-bold text-white">N</span>
           </div>
-          <span className="text-sm font-medium text-zinc-400">Athena</span>
+          <span className="text-sm font-medium text-zinc-400">Noesis</span>
         </div>
 
         <div className="flex items-center gap-6 text-sm text-zinc-600">
@@ -17,7 +17,7 @@ export function Footer() {
         </div>
 
         <p className="text-xs text-zinc-700">
-          &copy; {new Date().getFullYear()} Athena Platform
+          &copy; {new Date().getFullYear()} Noesis Platform
         </p>
       </div>
     </footer>

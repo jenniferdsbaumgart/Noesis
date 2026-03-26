@@ -17,7 +17,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
-          Athena unifies semantic search, AI-generated answers, and multi-source
+          Noesis unifies semantic search, AI-generated answers, and multi-source
           data integration into a single platform &mdash; built for organisations
           that need knowledge to be findable, not just stored.
         </p>
@@ -43,7 +43,7 @@ export function Hero() {
             <span className="h-3 w-3 rounded-full bg-zinc-700" />
             <span className="h-3 w-3 rounded-full bg-zinc-700" />
             <span className="h-3 w-3 rounded-full bg-zinc-700" />
-            <span className="ml-3 text-xs text-zinc-500 font-mono">athena-search</span>
+            <span className="ml-3 text-xs text-zinc-500 font-mono">noesis-search</span>
           </div>
           <div className="p-5 text-left font-mono text-sm leading-relaxed">
             <p className="text-zinc-500">
