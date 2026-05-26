@@ -1,8 +1,49 @@
 # Jobs To Be Done — Noesis
 
 **Autor:** product-strategist
-**Data:** 2026-05-25
+**Data:** 2026-05-25 (v1.0) · 2026-05-26 (v1.1 — pivot)
 **Status:** Hipóteses — alinhadas com [[personas]] e [[positioning]]. A validar por entrevistas.
+
+---
+
+## ⚡ PIVOT 2026-05-26
+
+| Job | Status pré-pivot | Status pós-pivot |
+|---|---|---|
+| **J1** Responder perguntas repetitivas (Marina) | Critical | ✅ **Critical — job primário do landing** |
+| **J2** Self-service auditável no produto do cliente (Marina) | High | ✅ **High — segundo job primário** |
+| **J3** Embarcar AI sem virar AI engineer (Caio) | Critical | ⚠️ **Secundário** — relevante pra Caio influenciar a decisão B2B, mas não é alvo de copy primária |
+| **J4** Avaliar maturidade do vendor (Caio) | High | ⚠️ **Secundário** — landing tem que passar nessa avaliação tecnicamente, mas não é vendida pra isso |
+| **J5** Adicionar busca + Q&A em produto indie (Dani) | High | ❌ **DROPPED** — Dani saiu do funil |
+| **J6** Provar rigor da IA pro C-level (Marina) | Medium | ✅ **Medium-High — entrou pesado no reframe** (reassurance cards de "Audit-ready AI" no landing) |
+
+### O que mudou na prática
+- **J5 deletado** — copy não menciona indie/freelancer/tier Starter
+- **J3 e J4 ficam em segundo plano** — landing dá prova técnica suficiente (How it works, eventualmente TechStack reframeado), mas o argumento de venda é J1/J2/J6 (deflexão + self-service + auditabilidade)
+- **J6 subiu de importância** — reassurance cards e seção Audit-ready AI agora dão peso explícito pra esse job
+- **Hierarchy (linha ~226)** abaixo está stale; ver "Hierarchy pós-pivot" logo abaixo
+
+### Hierarchy pós-pivot
+```
+                    Jobs Primários (Marina, dirige copy)
+                    ┌─────────────────────────────────┐
+                    │  J1: Deflexão de tickets        │
+                    │  J2: Self-service in-product    │
+                    │  J6: Auditabilidade pro board   │
+                    └─────────────────────────────────┘
+                                  │
+                                  ▼
+                    Jobs Secundários (Caio, valida fechamento)
+                    ┌─────────────────────────────────┐
+                    │  J3: Embarcar AI                │  ← landing precisa não vetar
+                    │  J4: Avaliar vendor             │  ← How it works ajuda
+                    └─────────────────────────────────┘
+
+                    Jobs Removidos
+                    ┌─────────────────────────────────┐
+                    │  J5: Indie integration  ❌      │  ← drop Dani
+                    └─────────────────────────────────┘
+```
 
 ---
 
@@ -154,7 +195,12 @@ README já é técnico e específico. Landing já mostra arquitetura. Repositór
 
 ---
 
-## J5 — Adicionar busca + Q&A em produto indie sem montar pipeline
+## ❌ J5 — Adicionar busca + Q&A em produto indie sem montar pipeline (DROPPED 2026-05-26)
+
+> **STALE.** Job mantido como referência; não orienta mais decisões de landing. Toda menção a "Starter", "trial sem cartão", "Dani" deve ser ignorada pro design atual.
+
+---
+
 
 **Statement:**
 > When I'm building my SaaS or info-product and my users keep asking the same questions,

@@ -1,9 +1,39 @@
 # Messaging Map — Noesis Landing
 
 **Autor:** product-strategist
-**Data:** 2026-05-25
+**Data:** 2026-05-25 (v1.0) · 2026-05-26 (v1.1 — pivot + execução parcial)
 **Status:** Recomendações por seção, derivadas de [[positioning]], [[personas]], [[jtbd]].
 **Próximo agente que consome:** ux-designer (informa wireframe + hierarquia visual) e — em ciclo futuro — frontend-dev (copy real).
+
+---
+
+## ⚡ PIVOT 2026-05-26 + status de execução
+
+Este doc é o mais afetado pelo pivot, porque foi escrito assumindo audiência mista (3 personas) e mapeia copy seção-por-seção.
+
+### Personas removidas/rebaixadas
+- ❌ **P3 Dani:** drop. Todas as referências a "tier Starter", "trial sem cartão", "Pricing pra Dani", "indie hacker" estão stale.
+- ⚠️ **P2 Caio:** rebaixado a influenciador. Continua importante no fechamento B2B (CTO valida tecnicamente), mas a copy do landing **não é desenhada pra ele** — só não pode expulsá-lo.
+- ✅ **P1 Marina:** única audiência primária da copy.
+
+### Seções já implementadas (commits)
+- ✅ **Hero** — reframeado em `d009247` (headline A "Knowledge that answers" + answer-with-citation card)
+- ✅ **Features (4 pilares)** — reescritos em `bae6468` ("Grounded / Every answer cited / Built for multiple customers / Speaks your market's language")
+- ✅ **How it works (substitui Architecture)** — implementado em `0e687d5` (4-step flow + 3 reassurance cards anti-alucinação)
+- ✅ **Use Cases (3 cenários Marina)** — reescritos em `11df5dc` (Cut support volume / Self-service inside your product / Audit-ready AI)
+- ✅ **Navbar + Contact CTAs alinhados** em `16514ea` ("Join the waitlist" em todo lugar)
+
+### Seções pendentes ou alteradas pelo pivot
+- ⏳ **Numbers** — bloqueado em decisão da fundadora (quais métricas reais usar pra substituir "209 API Endpoints / 30 Models / 21 Modules / 106 Unit Tests")
+- ⏳ **TechStack** — decisão pendente: reframe pra "foundations of trust" (SOC2/GDPR/modelos certificados) OU remover
+- ❌ **"Pricing preview" pra Dani** (Seção 8 abaixo) — drop completo. Quando entrar (MP-17), será tom enterprise.
+- ❌ **"Add Pricing/Docs no nav" pra Dani** (Seção 1, item 0) — drop "Docs"; Pricing fica mas como "talk to us"
+- ❌ **CTA segmentada com 3 personas no waitlist** (Seção 9 abaixo) — vira 2 opções (Customer Ops + Tech lead) ou opção única. Não há "indie hacker".
+
+### Tabelas/colunas stale neste doc
+- Toda coluna "P3 (Dani)" em qualquer tabela
+- Qualquer linha referindo "Para Dani:" ou "para o dev"
+- Recomendações que mencionam "Starter tier", "trial sem cartão", "Pricing acessível"
 
 ---
 

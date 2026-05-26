@@ -1,8 +1,20 @@
 # Positioning — Noesis
 
 **Autor:** product-strategist
-**Data:** 2026-05-25
+**Data:** 2026-05-25 (v1.0) · 2026-05-26 (v1.1 — pivot)
 **Status:** Hipótese forte — derivada do README + briefing humano. A validar com 5-10 entrevistas qualitativas antes de tratar como verdade.
+
+---
+
+## ⚡ PIVOT 2026-05-26 — leia antes de seguir
+
+A "audiência mista B2B+dev" deste documento foi estreitada pra **B2B puro (Marina)**. Em ordem de impacto:
+
+- **Seção 5 "Posicionamento por audiência"** ficou stale na parte do tech lead/dev — ignore o bloco "Para o tech lead / dev avaliando integrar". Caio (P2) continua no funil mas como **influenciador**, não como audiência primária da copy.
+- **Seção 6 "Hierarquia de prova"** está parcialmente implementada e parcialmente revisada — ver `artifacts/13-reports/roadmap.md` v1.1. Em particular: "5. Arquitetura" virou **"How it works" em trust language** (não diagrama NestJS). "7. Stack" tá em revisão (decisão pendente: reframe ou remoção).
+- **Seção 7 "Taglines"** — recomendação A ("Knowledge that answers") foi escolhida e implementada no Hero como "Knowledge that answers. / Not just stores." (commit `d009247`).
+- **Categoria + frame** (Sections 1-4) **continuam válidos** — "RAG Platform for Knowledge Operations" não muda.
+- **Pilares de differentiation** (Section 3) **continuam válidos** mas a copy do site renomeou eles: "Grounded answers / Every answer cited / Built for multiple customers / Speaks your market's language" (commit `bae6468`).
 
 ---
 
@@ -71,7 +83,11 @@ Importante: posicionamento ganha clareza pelo que se rejeita.
 
 ---
 
-## 5. Posicionamento por audiência (mixed B2B + dev)
+## 5. Posicionamento por audiência (~~mixed B2B + dev~~ B2B puro pós-pivot 2026-05-26)
+
+> ⚠️ **Stale.** Após o pivot, a audiência primária é única (Marina). Caio fica como influenciador no fechamento B2B; Dani saiu do funil. O texto abaixo está mantido como registro, mas só o bloco "Para o decisor B2B" continua sendo a fonte de copy ativa.
+
+
 
 ### Para o **decisor B2B** (CTO, Head of Knowledge, Head of Support)
 **Mensagem:** *"Pare de pagar por gente respondendo a mesma pergunta 50× por dia. Suas equipes têm a resposta no Confluence/Drive/Notion — só precisam achar. Noesis vira esse acervo em respostas instantâneas com citações auditáveis."*
@@ -139,7 +155,9 @@ Importante: posicionamento ganha clareza pelo que se rejeita.
 ## 9. Decisões registradas
 
 1. **Frame "RAG Platform for Knowledge Operations"** em vez de "AI search" ou "Knowledge base" — diferencia em ambos eixos
-2. **Audiência mista tratada com hierarquia narrativa**, não com seções separadas (evita fragmentação)
+2. ~~Audiência mista tratada com hierarquia narrativa~~ → **Pivot 2026-05-26:** audiência única (Marina). Hierarquia narrativa simplifica drasticamente.
 3. **Anti-positioning explícito** em copy interno (não necessariamente na landing) — disciplina de mensagem
-4. **CTA recomendada = waitlist + futuro trial self-serve**, NÃO "Request a Demo" — alinhado com preferência do fundador por baixo contato
-5. **Pricing fora do landing nesta fase** — pré-launch, foco em validar demanda antes de comprometer tiers
+4. **CTA = "Join the waitlist"** (sem self-serve trial pós-pivot — drop do funil Dani) — alinhado com preferência do fundador por baixo contato
+5. **Pricing fora do landing nesta fase** — pré-launch, foco em validar demanda antes de comprometer tiers. Quando entrar (MP-17), será tom enterprise ("Growth/Scale/Enterprise" com "Talk to us"), não Starter $19.
+6. **(NOVA 2026-05-26) Manter prova técnica reframeada, não removida.** Architecture/TechStack ficam mas em linguagem de trust; remover por completo seria red flag em produto RAG (alucinação é dor #1 da persona única).
+7. **(NOVA 2026-05-26) Hero tagline = A "Knowledge that answers"** — testada vs alternativas, escolhida e implementada.

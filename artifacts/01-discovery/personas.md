@@ -1,8 +1,26 @@
 # Personas — Noesis Landing
 
 **Autor:** product-strategist
-**Data:** 2026-05-25
+**Data:** 2026-05-25 (v1.0) · 2026-05-26 (v1.1 — pivot)
 **Status:** ⚠️ Hipóteses fortes — derivadas do README + domínio + briefing. Sem entrevistas formais. **A validar com 5-10 conversas qualitativas antes de tratar como verdade.**
+
+---
+
+## ⚡ PIVOT 2026-05-26 — leia antes de seguir
+
+A fundadora reavaliou a estratégia de audiência. Resumo do que mudou (full context em `PROJECT.md` decisões + memory `landing-pivot-2026-05-26`):
+
+| Persona | Status v1.0 | Status v1.1 (atual) |
+|---|---|---|
+| **P1 Marina** (Head of Customer Ops) | Decisor primário | ✅ **Única audiência primária** |
+| **P2 Caio** (Tech Lead) | Co-decisor com veto técnico | ⚠️ **Rebaixado a influenciador** — landing não é desenhada pra ele se divertir, mas mantém prova técnica suficiente pra ele não vetar |
+| **P3 Dani** (Indie Dev) | Self-serve PLG | ❌ **DROPPED** — sem funil PLG/indie; toda conversão é sales-led via waitlist |
+
+**Implicações nas seções abaixo:**
+- A persona **P3 Dani** (linhas 160-225 abaixo) está mantida como referência histórica mas **não orienta mais decisões de landing**. Ignore os "Cenário de uso (landing)" e "CTA ideal" dela.
+- **P2 Caio** continua existindo no funil B2B (CTO/eng leader que valida tecnicamente o pitch da Marina pro budget), mas a copy do landing **não é otimizada pra ele** — só não pode expulsá-lo. Decisões como "ele estuda Architecture 30 segundos" continuam true; o que mudou é que esse "Architecture" virou **"How it works" em linguagem de trust** (não NestJS/pgvector).
+- A "Matriz comparativa" (linha ~229) está stale na coluna Dani; tudo da Marina continua válido.
+- "Implicações para a landing" (linha ~243) está parcialmente implementado e parcialmente stale — ver `artifacts/13-reports/roadmap.md` v1.1 pro estado atual.
 
 ---
 
@@ -87,7 +105,11 @@ Marina chega no landing via post no LinkedIn de um VC falando sobre RAG companie
 
 ---
 
-## P2 — Caio, Tech Lead / Platform Engineer
+## ⚠️ P2 — Caio, Tech Lead / Platform Engineer (downgraded to influencer 2026-05-26)
+
+> **PARCIALMENTE STALE.** Perfil + dores + jobs continuam true. O que mudou: Caio **não é mais alvo de copy do landing** — a landing é desenhada pra Marina. Caio existe como veto técnico no fechamento B2B (CTO/eng leader que a Marina chama antes de assinar contrato). Por isso o landing precisa **manter prova técnica suficiente pra ele não vetar**, mas em linguagem de trust (não em linguagem dev). Ignore "Cenário de uso (landing)" abaixo onde fala em ir pra GitHub / docs / API — esses CTAs foram removidos.
+
+---
 
 > "Eu não vou montar RAG do zero de novo. Da última vez levei 4 meses para descobrir que o chunking estava errado."
 
@@ -157,7 +179,11 @@ Caio chega via post técnico no HackerNews ou indicação direta. Pula o hero, v
 
 ---
 
-## P3 — Dani, Solo Dev / Indie Hacker
+## ❌ P3 — Dani, Solo Dev / Indie Hacker (DROPPED 2026-05-26)
+
+> **STALE.** Seção mantida como referência histórica. Não orienta mais decisões de landing após o pivot. Toda menção a "tier Starter", "trial sem cartão", "self-serve" abaixo deve ser ignorada pra propósito de design da landing atual.
+
+---
 
 > "Eu só quero que meus usuários consigam achar resposta na minha doc sem eu precisar montar RAG do zero."
 
