@@ -1,0 +1,63 @@
+handoff:
+  from: product-strategist
+  to:
+    - ux-designer
+    - architect
+  date: 2026-05-25
+
+summary: |
+  Discovery do ciclo "Auditoria + Roadmap" do Noesis Landing concluído.
+  Produzidos 4 artefatos cobrindo positioning híbrido (RAG Platform for
+  Knowledge Operations — entre Knowledge Bases e RAG Infra), 3 personas
+  marcadas como hipóteses fortes (Marina/Head Ops, Caio/Tech Lead,
+  Dani/Indie Dev), 6 JTBDs priorizados (J1 e J3 críticos para conversão),
+  e messaging map com recomendações de copy e estrutura por seção.
+  Estágio pré-launch + aversão fundador a contato 1:1 ⇒ CTA recomendada
+  é waitlist segmentada, NÃO "Request a Demo" (que existe hoje).
+
+deliverables:
+  - path: artifacts/01-discovery/positioning.md
+    description: "Positioning statement, 4 differentiation pillars, anti-positioning, posicionamento por audiência, hierarquia de prova, tagline candidates"
+  - path: artifacts/01-discovery/personas.md
+    description: "3 personas (Marina/Head Ops, Caio/Tech Lead, Dani/Indie Dev) com critérios de decisão, objeções, cenário de uso na landing, matriz comparativa"
+  - path: artifacts/01-discovery/jtbd.md
+    description: "6 JTBDs (J1-J6) com hierarquia (estratégicos/operacionais/governança), mapping job→feature, lacunas a flagar para architect"
+  - path: artifacts/01-discovery/messaging-map.md
+    description: "Estrutura recomendada (10 seções, 2 novas: How it works + Pricing preview), mensagem por seção × persona, vocabulário a usar/evitar, tom de voz"
+
+key_decisions:
+  - "Frame 'RAG Platform for Knowledge Operations' — diferencia de Knowledge Bases (CMS) E de RAG Infra (DIY). Frame defensável com 4 pilares: pronto-vs-DIY, multi-tenant nativo, grounded answers, i18n end-to-end."
+  - "3 personas cobrem audiência mista B2B+dev: Marina (decisor B2B operacional, Pro/Enterprise), Caio (veto técnico em B2B, Pro), Dani (self-serve PLG, Starter). Diferentes ciclos de decisão (semanas vs minutos) e CTAs ideais distintas."
+  - "CTA 'Request a Demo' atual deve ser substituída por 'Join waitlist' segmentada. Alinha 3 inputs: estágio pré-launch + aversão fundador a contato 1:1 + persona P3 que abandona com CTA alto-contato."
+  - "Adicionar 2 seções novas: 'How it works' (demystifica RAG para Caio) e 'Pricing preview' (sem isso Dani abandona). Subir seção Numbers para imediatamente após Hero (impact em Marina e Caio)."
+  - "Tom de voz: anti-hype, anti-buzzword. Categoria está saturada de marketing vazio; diferenciar por sobriedade técnica. 'Production-ready' e 'Grounded' são as palavras-âncora."
+  - "Personas e cenários explicitamente marcados como 'hipóteses a validar' — sem entrevistas formais. Roadmap final deve incluir item 'rodar 5-10 conversas qualitativas em 60 dias'."
+
+risks:
+  - "Personas são hipóteses derivadas do README + intuição, não de entrevistas — risco de personas erradas. Mitigação: incluir validação no roadmap como prioridade."
+  - "Aversão do fundador a contato 1:1 limita métodos clássicos de validação (entrevistas) — buscar feedback assíncrono e analytics."
+  - "Categoria RAG está sendo comoditizada (OpenAI Assistants, Anthropic Files API). Differentiation depende de execução em multi-tenant + i18n + operational maturity — não em ter um pipeline RAG."
+  - "Pricing tier Starter recomendado para capturar Dani, mas modelagem econômica não foi feita — pode ser inviável a US$ 19-49/mês dado custo de embeddings + LLM. Flagar para architect avaliar."
+  - "Seções novas (How it works, Pricing preview) aumentam escopo de design + frontend em ciclo futuro — não há orçamento de tempo definido."
+
+next_steps:
+  - "ux-designer: Conduzir audit da landing ATUAL usando como filtro as 3 personas e o messaging-map. Para cada seção atual, avaliar: (1) hierarquia visual serve a persona dominante? (2) copy alinha com tom recomendado? (3) há fricção visual nos CTAs? Produzir artifacts/02-design/audit-report.md e recommendations.md."
+  - "architect: Conduzir audit técnico considerando os JTBDs. Verificar particularmente: bundle size + perf (afeta J5/Dani via mobile), SEO técnico (afeta J1/Marina chegando via search), i18n da landing (atualmente parece só EN), backend para waitlist form (não existe hoje — é necessário?), a11y. Avaliar viabilidade técnica das 2 seções novas propostas (How it works diagrama, Pricing preview). Produzir artifacts/03-architecture/tech-audit.md e recommendations.md."
+  - "ambos: PARAR ao concluir e aguardar G2 (humano aprova audits) antes de QA/security/review iniciarem em paralelo."
+
+blockers: []
+
+metrics:
+  files_created: 4
+  personas: 3
+  jobs_to_be_done: 6
+  pilares_differentiation: 4
+  secoes_atuais_avaliadas: 8
+  secoes_recomendadas_para_adicionar: 2
+  decisao_critica_de_copy: "CTA Request a Demo → Join waitlist segmentada"
+
+epics:
+  - id: D1
+    name: "Discovery completo (audit mode)"
+    deliverables: 4
+    status: complete

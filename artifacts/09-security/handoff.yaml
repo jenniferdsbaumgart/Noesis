@@ -1,0 +1,49 @@
+handoff:
+  from: security-analyst
+  to:
+    - tech-writer
+    - project-reporter
+  date: 2026-05-25
+
+summary: |
+  Security audit do Noesis Landing concluído. 3 vulnerabilidades em
+  deps (1 high + 2 moderate em Next 14.2.35 e PostCSS), zero security
+  headers configurados, 2 placeholders no código (email + GitHub),
+  superfície de ataque mínima por ser static export. Risk posture
+  atual: Médio (aceitável pré-launch sem dados); vira Alto assim que
+  form de waitlist for live (LGPD/GDPR aplicáveis). 16 findings
+  totais + política mínima recomendada em 3 níveis (P0-P2).
+
+deliverables:
+  - path: artifacts/09-security/audit-report.md
+    description: "Security audit: vulns em deps, headers, exposição/placeholders, supply chain, privacidade/LGPD-GDPR prep, limites de superfície static export, política mínima recomendada em 16 itens P0-P3"
+
+key_decisions:
+  - "Risk posture é Médio HOJE (static export, sem dados de usuário), vira Alto quando waitlist form for live"
+  - "Vulns Next.js têm risco REAL baixo na prática (RSC e Image Optimizer não usados em static export) mas risco REPUTACIONAL alto (npm audit, scanners pegam) — manter no roadmap"
+  - "CSP com nonce não é possível em static export (sem SSR per-request) — começar com CSP permissive 'unsafe-inline' e migrar se mudar para hybrid"
+  - "Privacy policy ANTES do form de waitlist é blocking — sem ela, coletar email viola LGPD Art. 9 + GDPR Art. 13"
+  - "Vercel Analytics não usa cookies — não precisa cookie banner; reavaliar se trocar tool"
+
+risks:
+  - "Sem política de privacidade, lançar waitlist é exposição legal (multas LGPD podem chegar a 2% do faturamento ou R$50M)"
+  - "Sem CI com 'npm audit' bloqueando, vulns futuras podem entrar despercebidas — confirma necessidade de REC-T09 (CI no architect)"
+  - "Sem secret scanning, risco médio de keys vazarem em commit (especialmente Resend API key e Vercel tokens)"
+  - "Estimativa Snyk/Socket.dev não rodada — pode haver vulns em transitive deps não capturadas por npm audit"
+
+next_steps:
+  - "tech-writer: consolidar com QA/UX/Arch/CodeReview; itens cross-cutting (placeholders, build broken) já aparecem em múltiplos audits"
+  - "project-reporter: P0 zero-day = (a) atualizar PostCSS (5 min), (b) upgrade Next conforme janela autorizada, (c) configurar 4 security headers no vercel.json. Privacy policy é P0 antes de waitlist."
+
+blockers: []
+
+metrics:
+  files_created: 1
+  findings_critical: 2
+  findings_high: 5
+  findings_medium: 6
+  findings_low: 3
+  vulnerabilities_npm_audit: 3
+  headers_configurados: 0
+  placeholders_identificados: 2
+  score: 4.3

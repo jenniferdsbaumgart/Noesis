@@ -1,0 +1,62 @@
+handoff:
+  from: ux-designer
+  to:
+    - qa-engineer
+    - security-analyst
+    - code-reviewer
+    - tech-writer
+    - project-reporter
+  date: 2026-05-25
+
+summary: |
+  UX/Design audit do Noesis Landing concluído em modo auditoria.
+  Score médio 5.25/10 — landing competente esteticamente mas com
+  5 findings críticos (CTA Request a Demo desalinhada, GitHub link
+  quebrado, email placeholder, sem nav Pricing/Docs, sem form),
+  9 high (acessibilidade, mobile nav, hierarquia narrativa),
+  12 medium, 6 low. Produzidos audit-report.md (estado atual seção
+  por seção + cross-cutting findings) e recommendations.md (32 itens
+  priorizados em P0-P3, ~150h de esforço total). Findings críticos
+  para roadmap: substituir mailto por form de waitlist segmentada,
+  adicionar Pricing+Docs nav, subir Numbers para após Hero, reescrever
+  Use Cases alinhados a personas, adicionar How it works e Pricing
+  preview sections.
+
+deliverables:
+  - path: artifacts/02-design/audit-report.md
+    description: "Audit do estado atual: 9 seções analisadas, 5 critical + 9 high + 12 medium + 6 low findings, score por critério, mapping finding→persona"
+  - path: artifacts/02-design/recommendations.md
+    description: "32 recomendações priorizadas P0-P3 com esforço estimado, impacto, agente sugerido para executar; total ~150h / 20 dev-days"
+
+key_decisions:
+  - "Manter ordem geral da landing mas mover Numbers para imediatamente após Hero (impact rápido em P1/Marina e P2/Caio)"
+  - "Reduzir Features de 10 cards para 4 pilares + grid secundário (hierarquia narrativa alinhada com positioning)"
+  - "Não recomendar light mode em P0/P1 — é P2; dark-only atual está OK para o momento"
+  - "Recomendar form de waitlist com segmentação (radio 'what describes you') em vez de só email — captura inteligência sem 1:1, alinhado com preferência fundador"
+  - "Não recomendar testimonials/social proof (sem clientes ainda) — substituir por prova de engenharia (Numbers + Architecture + TechStack), já presente"
+
+risks:
+  - "Várias recomendações têm dependência técnica não-resolvida: form precisa de backend/serviço (ver architect handoff), light mode precisa de token system, i18n precisa de routing change"
+  - "Pricing preview depende de decisão real de pricing — fundador precisa decidir tiers antes de wireframear/implementar"
+  - "Recomendação de eliminar 'Academic & Research' use case pode ser sensível se houver leads acadêmicos esperados"
+  - "Acessibilidade tem gaps reais (contraste, focus, lang único vs promessa multi-idioma) — pode virar problema legal em mercados regulados"
+
+next_steps:
+  - "qa-engineer: rodar Lighthouse/axe-core/Pa11y sobre a landing em build local. Confirmar/quantificar findings AC1-AC7 e R1-R4. Adicionar findings de performance (LCP, CLS, TBT) e cross-browser que não consigo medir como designer."
+  - "security-analyst: avaliar npm audit, deps desatualizadas (Next 14.2 quando 15.x já está GA — ver architect), security headers no static export, exposição de placeholder data (github.com/your-org/noesis sugere descuido sistêmico)."
+  - "code-reviewer: avaliar qualidade do código dos componentes — particularmente: (a) padrão de cor 'indigo' ainda em architecture.tsx apesar de commit recente trocar para cyan/accent (inconsistência), (b) tsconfig com target ES5 (anacrônico para projeto greenfield), (c) sem testes nem tipos rigorosos em props."
+  - "tech-writer: este audit + arch audit + qa audit + security audit + code review vão consolidar em findings-consolidated.md. Deduplicar por tema."
+  - "project-reporter: usar as 32 recomendações como base do roadmap final; cruzar com recomendações dos outros auditores para priorização cross-domínio."
+
+blockers: []
+
+metrics:
+  files_created: 2
+  findings_critical: 5
+  findings_high: 9
+  findings_medium: 12
+  findings_low: 6
+  recommendations: 32
+  esforco_estimado_horas: 150
+  esforco_estimado_dev_days: 20
+  score_medio_estado_atual: 5.25

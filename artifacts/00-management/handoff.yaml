@@ -1,0 +1,52 @@
+handoff:
+  from: squad-manager
+  to:
+    - product-strategist
+  date: 2026-05-25
+
+summary: |
+  Squad inicializado em modo "Auditoria + Roadmap" para o landing do Noesis
+  (Next.js 14 estático, repo público). Objetivo do ciclo: avaliar landing
+  atual sob 4 lentes (produto, design, arquitetura, qualidade/segurança) e
+  produzir roadmap consolidado. Sem reescrita de código nesta rodada.
+  Audiência mista (decisores B2B + tech leads/devs). Entregável final:
+  artifacts/13-reports/roadmap.md.
+
+deliverables:
+  - path: PROJECT.md
+    description: "Status, pipeline customizado (7 fases ativas, 7 puladas), decisões iniciais, contexto"
+  - path: artifacts/00-management/execution-plan.md
+    description: "Plano completo do ciclo: fases, gates, entregáveis por agente, cronograma, riscos"
+
+key_decisions:
+  - "Modo Auditoria + Roadmap em vez de pipeline completo — humano quer avaliar antes de implementar"
+  - "Audiência mista (B2B + dev) — discovery e design devem segmentar narrativa por perfil"
+  - "Fases 04-07, 10, 14, 15 puladas — sem implementação, backend, IA, ou deploy neste ciclo"
+  - "Entregável final = artifacts/13-reports/roadmap.md, não código novo"
+  - "Audits rodam em paralelo após discovery e arch/design base (08+09+11)"
+
+risks:
+  - "Discovery pode propor mudança de positioning que invalida parte do site atual — humano decide no G1"
+  - "Volume de findings dos audits pode exceder roadmap realista — tech-writer dedupica, project-reporter prioriza"
+
+next_steps:
+  - |
+    product-strategist: Produzir discovery focado em validar/refinar o positioning
+    atual do Noesis para audiência MISTA (decisores B2B + tech leads/devs).
+    Entregáveis obrigatórios:
+      - artifacts/01-discovery/positioning.md
+      - artifacts/01-discovery/personas.md (2-3 personas cobrindo ambos perfis)
+      - artifacts/01-discovery/jtbd.md (jobs-to-be-done por persona)
+      - artifacts/01-discovery/messaging-map.md (mensagem por seção do landing por persona)
+      - artifacts/01-discovery/handoff.yaml
+    Inputs a ler: README.md (positioning atual), código em src/ (o que o landing
+    comunica hoje), PROJECT.md, este handoff, artifacts/00-management/execution-plan.md.
+    Após concluir, PARAR em G1 e esperar aprovação humana antes de 02+03.
+
+blockers: []
+
+metrics:
+  files_created: 2
+  fases_planejadas: 8
+  fases_puladas: 7
+  gates_de_aprovacao: 3

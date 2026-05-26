@@ -1,0 +1,52 @@
+handoff:
+  from: project-reporter
+  to:
+    - squad-manager
+    - humano
+  date: 2026-05-25
+
+summary: |
+  Roadmap final do ciclo "Auditoria + Roadmap" do Noesis Landing
+  entregue. 40 itens acionáveis priorizados em 3 horizontes:
+  9 Quick Wins (~6h, 1 dia), 19 Médio Prazo (~100h, 2-6 semanas
+  em 3 sprints), 12 Longo Prazo (~100h, 2-6 meses). Executive
+  Summary de 1 página produzido para stakeholder. Ciclo do squad
+  formalmente concluído — landing tem fundação sólida que precisa
+  de COMPLETION (tooling, instrumentação, correções de mensagem),
+  não de REWRITE.
+
+deliverables:
+  - path: artifacts/13-reports/roadmap.md
+    description: "ENTREGÁVEL FINAL — 40 itens em Quick Wins / Médio / Longo, com esforço, impacto, agente sugerido, dependências, sprints organizados, métricas de sucesso esperadas, riscos, e decisões pendentes residuais"
+  - path: artifacts/13-reports/executive-summary.md
+    description: "1 página para stakeholder: 5 bullets essenciais, scores atuais, roadmap em 1 minuto, próximo passo recomendado, o que está bem"
+
+key_decisions:
+  - "Roadmap organizado por HORIZONTE TEMPORAL (não por persona ou por domínio) — facilita decisão de 'o que faço primeiro' para fundadora solo"
+  - "Quick Wins de 6h totais — todos os 9 cabem em 1 sábado focado e desbloqueiam deploy + eliminam vergonhas visíveis"
+  - "Médio Prazo em 3 sprints temáticos: (1) infra+segurança+captura, (2) conversão+a11y+estrutura, (3) SEO+seções novas"
+  - "LP-11 (validar personas com entrevistas) é destacado como item de MAIOR ALAVANCA estratégica embora seja Longo Prazo — sem isso, todas as decisões de copy estão em hipótese"
+  - "Sem code refactor massivo recomendado — code quality é 7/10, não é o gargalo; resistir ao instinto de 'limpar' sem benefício específico"
+
+risks:
+  - "Roadmap assume fundadora solo executando em paralelo com plataforma — pode levar 2-3x mais tempo que estimativa dev-day"
+  - "Decisões pendentes (D1-D5) podem virar bloqueio se acumularem"
+  - "Personas não validadas significam que todo o roadmap pode precisar pivot após LP-11"
+
+next_steps:
+  - "humano: aprovar entrega do ciclo OU pedir refinamento. Próxima ação recomendada: executar Quick Wins (1 sábado). Próximo ciclo do squad: rodar quando MP estiver completo (3-6 meses), com nova foco: 'validation cycle' (entrevistas + iteração baseada em analytics)."
+  - "squad-manager: marcar fases 12 e 13 como completas no PROJECT.md; ciclo concluído."
+
+blockers: []
+
+metrics:
+  files_created: 3 (incluindo este handoff)
+  itens_roadmap_total: 40
+  quick_wins: 9
+  medio_prazo: 19
+  longo_prazo: 12
+  esforco_total_horas: 210
+  esforco_total_dev_days: 30
+  horizontes_temporais: 3
+  sprints_medio_prazo: 3
+  decisoes_pendentes_residuais: 5

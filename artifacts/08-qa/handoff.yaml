@@ -1,0 +1,47 @@
+handoff:
+  from: qa-engineer
+  to:
+    - tech-writer
+    - project-reporter
+  date: 2026-05-25
+
+summary: |
+  QA audit do Noesis Landing concluído em modo heurístico (sem servidor
+  live para Lighthouse/axe). Achado mais crítico: BUILD ESTÁ QUEBRADO
+  atualmente — type error em src/app/layout.tsx:5 ('declare module *.css'
+  é sintaxe inválida fora de .d.ts). O out/ no repo é de versão anterior.
+  Sem fix, CI/deploy falha. Outros 3 críticos confirmam findings de
+  design/arch: link GitHub quebrado, email placeholder, mobile sem nav.
+  24 findings totais (4 crit + 7 high + 9 med + 4 low). 8 validações
+  identificadas que requerem ambiente live e devem ser feitas no ciclo
+  de implementação (Lighthouse, axe-core, cross-browser, screen reader).
+
+deliverables:
+  - path: artifacts/08-qa/audit-report.md
+    description: "QA audit: build/typecheck (build atual quebrado), performance heurística, acessibilidade WCAG 2.1 AA checklist, links, responsividade, SEO técnico, funcional. 24 findings + 8 validações live identificadas."
+
+key_decisions:
+  - "Build atual está QUEBRADO — Q-CRIT-01 deve ser fixado antes de qualquer outra ação (deletar linha 5 de layout.tsx)"
+  - "Lighthouse e axe-core não foram rodados — devem ser obrigatórios no CI do ciclo de implementação"
+  - "Score quantificável ~5/10 com forte penalidade por build broken — quando build voltar, score sobe pra ~6-7/10"
+  - "Findings de a11y (contraste, focus, skip-link) confirmam achados qualitativos do design audit — convergência aumenta prioridade"
+
+risks:
+  - "Build broken não foi detectado em commit (sem CI) — pode haver outros bugs latentes que CI revelaria"
+  - "Sem Lighthouse real, score performance é estimativa; pode estar pior em conexões 3G/4G de mercados emergentes (relevante para PT-BR i18n)"
+  - "Acessibilidade está abaixo do compliance — risco legal em mercados que exigem WCAG (UE Accessibility Act 2025, etc.)"
+
+next_steps:
+  - "tech-writer: consolidar findings deste audit com os de UX/Arch/Security/CodeReview em findings-consolidated.md, deduplicando (ex: 'link GitHub' aparece em UX C1 e aqui Q-CRIT-02 — manter uma referência cruzada)"
+  - "project-reporter: build quebrado é P0-zero — colocar PRIMEIRO no roadmap final, antes de qualquer outra recomendação"
+
+blockers: []
+
+metrics:
+  files_created: 1
+  findings_critical: 4
+  findings_high: 7
+  findings_medium: 9
+  findings_low: 4
+  validacoes_live_pendentes: 8
+  score_estimado: 5

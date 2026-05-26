@@ -1,0 +1,65 @@
+handoff:
+  from: architect
+  to:
+    - qa-engineer
+    - security-analyst
+    - code-reviewer
+    - tech-writer
+    - project-reporter
+  date: 2026-05-25
+
+summary: |
+  Tech audit do Noesis Landing concluído. Score técnico médio 4.2/10
+  — stack escolhida adequada (Next + static export) mas com 2
+  vulnerabilidades ativas em Next 14.2.35 (DoS + Image Optimizer) e
+  1 em PostCSS (XSS), public/ completamente vazio (sem favicon, sem
+  og-image, sem robots.txt, sem sitemap.xml), JS shipping ~665KB
+  inflado por target ES5 anacrônico, ausência completa de tooling
+  operacional (sem CI, sem analytics, sem .env.example, sem Prettier,
+  sem security headers definidos no projeto). 28 recomendações
+  produzidas (P0-P3), ~100h / 13 dev-days totais. 5 decisões
+  pendentes que dependem do humano (host, form solution, analytics
+  solution, janela do upgrade Next, prioridade de mercados i18n).
+
+deliverables:
+  - path: artifacts/03-architecture/tech-audit.md
+    description: "Audit técnico cobrindo stack, segurança (npm audit + vulns), performance (bundle), SEO, a11y técnica, backend (gaps), build/deploy, i18n, qualidade. 6 critical + 9 high + 11 medium + 5 low findings + 3 ADRs retrospectivos."
+  - path: artifacts/03-architecture/recommendations.md
+    description: "28 recomendações priorizadas P0-P3 com esforço estimado, impacto, decisões pendentes consolidadas. Total ~100h / 13 dev-days."
+
+key_decisions:
+  - "Next 14→16 upgrade recomendado em janela própria antes de adicionar features novas — corrige 2 vulns conhecidas e habilita Turbopack/Cache Components. Risco médio (código simples, codemods automáticos parte)."
+  - "TypeScript target 'es5' deve ir para 'es2022' — eliminação imediata de ~30-40KB de polyfills sem risco. Win rápido."
+  - "Form de waitlist NÃO pode ser API route (static export). Recomendação inicial: Resend ou Loops (combina waitlist + email transactional + analytics simples)."
+  - "Analytics: Vercel Analytics se host é Vercel; Plausible se prefere open-source. Posthog tem free tier mais generoso mas é mais pesado."
+  - "i18n na landing é P2 (não P0/P1) — promessa do hero '5 languages' precisa cumprir, mas custo é alto (16-24h) e depende de decisão estratégica de mercados."
+  - "Não migrar para Tailwind 4 ainda — Tailwind 3 está estável e gain é marginal para landing simples; fazer só quando design system crescer."
+
+risks:
+  - "2 vulnerabilidades Next.js de severidade moderate+high estão expostas em produção. Mitigação requer upgrade major ou fix-force que vai pra Next 16 (breaking)."
+  - "public/ vazio (sem og-image) significa que cada compartilhamento social hoje converte 2-3x pior do que poderia. Perda de demand validation pré-launch."
+  - "Static export limita features futuras (forms, A/B testing, edge personalization). Quando precisar, terá que considerar hybrid mode (output dinâmico para algumas rotas) — pode causar refactor."
+  - "Ausência total de analytics significa que fundadora está voando às cegas. Sem dado para validar hipóteses do discovery (personas, mercados, conversão)."
+  - "5 decisões pendentes podem virar bloqueio — todas dependem da fundadora. Recomendado consolidar em sessão única de decisão antes de ciclo de implementação."
+
+next_steps:
+  - "qa-engineer: rodar Lighthouse + axe-core + Pa11y em build local. Quantificar findings que arquitetura listou qualitativamente: bundle size real após gzip, LCP/CLS/INP, contraste exato (sigma do design audit), responsividade real, cross-browser. Reportar comparativo Lighthouse atual vs target."
+  - "security-analyst: confirmar npm audit, expandir para snyk/socket se possível; verificar exposição de dados (placeholder github.com/your-org/noesis, email não-confirmado); avaliar supply chain (autores/manutenção das 14 deps top-level); recomendar política mínima de headers."
+  - "code-reviewer: revisar componentes por consistência (especialmente cor indigo/violet/emerald/amber em architecture.tsx vs decisão accent/cyan recente), padrões TS (tipos de props mesmo sem props), magic numbers, separação de concerns."
+  - "tech-writer: consolidar findings dos 3 audits (design + arch + qa + security + code review) em findings-consolidated.md, dedupplicando por tema (ex: 'CTA Request a Demo' aparece em design + qa; consolidar em 1 item)."
+  - "project-reporter: usar 28 recommendations + 32 recommendations do design + findings de qa/security/code-review para gerar roadmap.md final priorizado cross-domínio."
+
+blockers: []
+
+metrics:
+  files_created: 2
+  findings_critical: 6
+  findings_high: 9
+  findings_medium: 11
+  findings_low: 5
+  recommendations: 28
+  esforco_estimado_horas: 100
+  esforco_estimado_dev_days: 13
+  decisoes_pendentes_humano: 5
+  vulns_segurança_ativas: 3
+  score_medio_estado_atual: 4.2
