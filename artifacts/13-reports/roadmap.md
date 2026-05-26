@@ -1,9 +1,23 @@
 # 🗺️ Roadmap — Noesis Landing
 
 **Autor:** project-reporter
-**Data:** 2026-05-25
-**Versão:** 1.0 — primeiro ciclo de auditoria
+**Data:** 2026-05-25 (v1.0) · 2026-05-26 (v1.1 — pivot de personas)
 **Source:** [[findings-consolidated]] (38 temas, 98 findings brutos)
+
+---
+
+## ⚡ Pivot de personas — 2026-05-26
+
+A fundadora reavaliou a estratégia de audiência e decidiu **estreitar pra B2B puro**:
+
+- **Drop Dani (P3 indie dev).** Sem mais funil self-serve / PLG / indie-hacker no landing. Toda conversão vai por **waitlist → sales-led**.
+- **Caio (P2 tech lead) rebaixado de co-decisor pra influenciador.** Continua relevante como veto técnico em vendas B2B, mas o landing **não é desenhado pra ele se divertir**.
+- **Marina (P1 Head of Customer Ops) é a única audiência primária.**
+- **Architecture + TechStack permanecem — reframeados.** Ausência completa de prova técnica seria red flag num produto RAG (alucinação é a dor #1 da Marina). Mas a copy migra de linguagem dev (NestJS/Prisma/pgvector) pra linguagem de **trust** (Source → Grounded Answer → Citation).
+
+### Impacto deste roadmap
+
+Itens marcados com **🔄 PIVOT** abaixo foram revisados; o original (v1.0) está riscado quando o escopo mudou. Itens marcados com **❌ DROP** saíram. Novo item **MP-20 (copy reframe)** entra como prioridade do Sprint 2.
 
 ---
 
@@ -149,6 +163,22 @@ Cada item tem:
 
 ### Sprint 2 (semana 3-4) — Conversão + a11y + estrutura
 
+#### MP-20 — Copy reframe pós-pivot (NEW — destrava MP-11, MP-12, MP-14, MP-16, MP-17) 🆕
+- **Origem:** pivot de personas 2026-05-26
+- **Ação:** sessão de copy guiada por persona única (Marina). Reescrever:
+  - **Hero headline + subheadline + API snippet → resposta-com-citação visual** (não JSON cru)
+  - **Numbers:** trocar métricas de volume técnico ("209 endpoints, 30 modelos") por **métricas de qualidade pra Marina**: citation accuracy %, languages, response time, audit retention
+  - **TechStack:** decidir entre (a) trocar de "stack dev" pra "foundations de trust" (SOC2/GDPR/modelos certificados) OU (b) remover por completo
+  - **Architecture/How it works:** ver MP-16
+  - **Features pilares:** ver MP-11
+  - **Use Cases:** ver MP-12
+  - **Pricing:** ver MP-17
+- **Esforço:** M (4-6h decisão + 4-6h escrita = ~8-12h total)
+- **Impacto:** **Crítico** — sem isso, todo o Sprint 2 escreve sobre o mesmo content velho
+- **Agente:** product-strategist (decisão) + tech-writer (escrita) + frontend-dev (aplicação)
+- **Depende de:** atualização do [[personas]] (P3 removida, P2 rebaixada) — pode ser feito junto
+
+
 #### MP-8 — Substituir Contact por seção Waitlist segmentada
 - **Tema:** T-05 (finalização)
 - **Ação:** form com email + radio "what describes you" + consent checkbox + no-spam message
@@ -163,25 +193,28 @@ Cada item tem:
 - **Impacto:** Alto — mobile ~50% do tráfego
 - **Agente:** frontend-dev
 
-#### MP-10 — Adicionar `Pricing` + `Docs` no navbar (com páginas stub)
+#### MP-10 — Adicionar `Pricing` no navbar (com página stub) 🔄 PIVOT
 - **Tema:** T-12
-- **Ação:** 2 links + páginas `/pricing` e `/docs` com "Coming soon"
-- **Esforço:** S (3-4h)
-- **Impacto:** Alto — Dani não abandona; Caio não frustra
+- ~~Ação original: 2 links + páginas `/pricing` e `/docs` com "Coming soon"~~
+- **Ação revisada:** só `Pricing` no navbar; **drop `Docs`** (Dani saiu, Caio não decide). Página `/pricing` com 3 tiers + CTA "Talk to us", **sem** tier self-serve barato.
+- **Esforço:** XS (1-2h) ↓ era S
+- **Impacto:** Médio — sinaliza pra Marina que existe estrutura comercial; Caio (influenciador) vê tabela e relaxa
 - **Agente:** frontend-dev
 
-#### MP-11 — Reduzir Features para 4 pilares + grid secundário
+#### MP-11 — Reduzir Features para 4 pilares + grid secundário 🔄 PIVOT
 - **Tema:** T-14
-- **Ação:** 4 cards grandes (pilares de differentiation) + subgrid "também incluso"
+- **Ação:** 4 cards grandes — mas pilares **reescritos em linguagem de trust pra Marina**, não em features técnicas. Sugestão de pilares: (1) Grounded — não inventa, (2) Auditável — toda resposta cita fonte, (3) Multi-tenant — isolamento por cliente, (4) Multi-idioma — atende seu mercado. Subgrid "também incluso" pode listar API/widget/SDK pra cobrir Caio sem ser o destaque.
 - **Esforço:** M (6-8h)
-- **Impacto:** Alto — hierarquia narrativa
+- **Impacto:** Alto — hierarquia narrativa alinhada com persona única
 - **Agente:** ux-designer + frontend-dev
+- **Depende de:** MP-20 (decisão de copy reframe)
 
-#### MP-12 — Reescrever Use Cases alinhados a personas
+#### MP-12 — Reescrever Use Cases alinhados a Marina 🔄 PIVOT
 - **Tema:** T-15
-- **Ação:** 3 cenários nomeados (Marina/support, Marina/in-product, Dani/indie)
+- ~~Ação original: 3 cenários (Marina/support, Marina/in-product, Dani/indie)~~
+- **Ação revisada:** 3 cenários **só de Marina**: (a) deflexão de tickets em CS, (b) self-service embutido no widget do produto, (c) audit/compliance da resposta IA. Drop Dani/indie completamente.
 - **Esforço:** S (4-5h)
-- **Impacto:** Alto — cada persona se vê
+- **Impacto:** Alto — Marina se vê 3x; nenhum verbo "dev" entra na seção
 - **Agente:** product-strategist + frontend-dev
 
 #### MP-13 — Acessibilidade: contraste + focus + skip-link
@@ -206,17 +239,22 @@ Cada item tem:
 - **Impacto:** Médio-Alto (SEO orgânico)
 - **Agente:** frontend-dev
 
-#### MP-16 — Adicionar seção "How it works" (RAG flow diagrama)
+#### MP-16 — Substituir Architecture por "How it works" (trust diagram) 🔄 PIVOT
 - **Tema:** T-24
-- **Esforço:** M (6-8h)
-- **Impacto:** Alto para Caio (desmistifica)
+- ~~Ação original: somar "How it works" como seção nova com RAG flow técnico pra Caio~~
+- **Ação revisada:** **substitui** a Architecture atual (não soma). Diagrama de 3-4 caixas em linguagem de negócio: `Suas fontes → Indexação semântica → Pergunta do usuário → Resposta com citação`. Zero menção a vector DB, chunking, embeddings. Marina entende em 5 segundos; Caio reconhece como RAG mas sem o jargão expulsar Marina.
+- **Esforço:** M (6-8h) — inclui rewrite do componente Architecture
+- **Impacto:** Alto — único lugar que mostra "como evita alucinação" sem texto, e essa é a dor #1 da Marina
 - **Agente:** ux-designer + frontend-dev
+- **Depende de:** MP-20 (decisão de copy)
 
-#### MP-17 — Adicionar seção "Pricing preview"
+#### MP-17 — Adicionar seção "Pricing preview" (enterprise tone) 🔄 PIVOT
 - **Tema:** T-25
+- ~~Ação original: pricing pra Dani ($19/mês Starter)~~
+- **Ação revisada:** 3 tiers em tom B2B — provavelmente algo como `Growth / Scale / Enterprise` com "Talk to us" em todos. Sem trial self-serve. Pode citar faixa indicativa ("from $X/month") ou só "Custom pricing".
 - **Esforço:** S (4-5h)
-- **Impacto:** Alto para Dani
-- **Agente:** ux-designer + frontend-dev
+- **Impacto:** Médio-Alto — Marina vê estrutura comercial, qualifica intent dela
+- **Agente:** ux-designer + product-strategist + frontend-dev
 
 #### MP-18 — Configurar Prettier + lint-staged + husky
 - **Tema:** T-32
@@ -259,10 +297,9 @@ Cada item tem:
 - **Impacto:** Médio (marca + memorabilidade)
 - **Agente:** ux-designer
 
-### LP-4 — Logos das techs + links de docs no TechStack
+### ~~LP-4 — Logos das techs + links de docs no TechStack~~ ❌ DROP
 - **Tema:** T-30
-- **Esforço:** S (4-6h)
-- **Impacto:** Médio (Caio aprecia)
+- **Motivo do drop:** pivot 2026-05-26 — TechStack vai ser repensado em MP-20, e links pra docs são pra Caio (que deixou de ser decisor). Manter aqui só pra histórico.
 
 ### LP-5 — Snyk/Socket.dev no CI
 - **Tema:** T-34
@@ -323,8 +360,8 @@ Cada item tem:
 | Horizonte | Itens | Esforço | Calendário |
 |-----------|-------|---------|------------|
 | 🚀 Quick Wins | 9 | ~6h | 1 dia focado |
-| 📈 Médio Prazo | 19 (3 sprints) | ~80-120h | 2-6 semanas |
-| 🌱 Longo Prazo | 12 | ~80-120h | 2-6 meses |
+| 📈 Médio Prazo | 20 (3 sprints, +MP-20 do pivot) | ~90-130h | 2-7 semanas |
+| 🌱 Longo Prazo | 11 (LP-4 dropped) | ~75-115h | 2-6 meses |
 | **Total** | **40** | **~170-250h** | **2-7 meses** |
 
 ### Recomendação realista para fundador solo

@@ -8,12 +8,13 @@
 
 | Campo | Valor |
 |-------|-------|
-| **Fase Atual** | ✅ Ciclo concluído |
-| **Agente Ativo** | — (entregue para humano) |
-| **Última Atualização** | 2026-05-25 |
-| **Progresso Geral** | 100% |
-| **Entregável final** | `artifacts/13-reports/roadmap.md` ⭐ |
-| **Modo do ciclo** | Auditoria + Roadmap (não-implementação) |
+| **Fase Atual** | ✅ Ciclo de auditoria concluído · 🏗️ Execução do roadmap em andamento (humano) |
+| **Agente Ativo** | — (entregue para humano; Claude apoia execução) |
+| **Última Atualização** | 2026-05-26 |
+| **Progresso Geral** | Auditoria 100% · Execução: 9/9 Quick Wins ✅ · MP-1, MP-2, MP-3 ✅ |
+| **Entregável final** | `artifacts/13-reports/roadmap.md` ⭐ (v1.1 com pivot de personas) |
+| **Modo do ciclo** | Auditoria + Roadmap (não-implementação) → execução iterativa |
+| **Pivot ativo** | 2026-05-26 — Marina-only (drop Dani, Caio rebaixado) |
 
 ---
 
@@ -66,6 +67,9 @@
 | 2026-05-25 | Analytics = Vercel Analytics (default recomendado) | Alinha com host; sem cookie banner; free tier inicial | humano (default arquiteto) |
 | 2026-05-25 | Upgrade Next 14→16 autorizado | Entra no roadmap como P1; corrige 2 vulns conhecidas | humano |
 | 2026-05-25 | i18n = PT-BR + EN inicialmente | Sobe REC-T18 de P2 para P1; cumpre parcialmente promessa "5 languages" | humano |
+| 2026-05-26 | **Pivot de personas: Marina-only.** Drop Dani (P3 indie). Caio (P2 tech lead) rebaixado de co-decisor pra influenciador | Fundadora prefere narrativa coesa B2B + baixo contato dev. Aceita perda de canal PLG/HN em troca de foco. Architecture/TechStack permanecem mas serão reframeados (não removidos) — ausência total seria red flag em produto RAG | humano |
+| 2026-05-26 | MP-20 (copy reframe) entra como pré-requisito do Sprint 2 | Sem reescrever copy primeiro, MP-11/12/16/17 escreveriam em cima de framing velho | humano + Claude |
+| 2026-05-26 | LP-4 (tech stack docs links) **dropped** | Era item pra Caio; com Caio fora do funil primário, não há demanda | humano |
 
 ---
 
@@ -82,10 +86,14 @@ Noesis é uma plataforma RAG multi-tenant (repositório privado). Este repositó
 - **Linguagem:** TypeScript 5.5
 - **Build/Deploy:** Static export (`out/` no repo, sugere `output: 'export'`)
 
-### Personas (a produzir pelo product-strategist)
-Audiência mista — squad deve definir 2-3 personas cobrindo:
-- **Decisores B2B** (CTOs, Heads of Knowledge, Heads of Support) — foco em ROI, arquitetura, compliance
-- **Tech leads / devs** — foco em API, widget, stack, exemplos de integração
+### Personas (estado pós-pivot 2026-05-26)
+**Audiência primária única: Marina** (Head of Customer Ops / Support / Sucesso do Cliente em B2B SaaS 100-1000 pessoas). Foco em ROI, compliance, audit de respostas IA, deflexão de tickets.
+
+**Caio (tech lead/platform eng)** continua relevante como influenciador no fechamento B2B — landing precisa dar provas técnicas suficientes pra Marina mostrar pro CTO sem virar red flag. Mas a copy **não é desenhada pra ele se divertir** (nada de NestJS/pgvector visível).
+
+**Dani (indie dev)** removida. Sem funil self-serve / PLG / indie. Toda conversão é sales-led via waitlist.
+
+Detalhes históricos em `artifacts/01-discovery/personas.md` (v1.0 — pré-pivot). Atualização desse doc é trabalho pendente do MP-20.
 
 ### Escopo MVP
 N/A — ciclo de auditoria. MVP seria o roadmap consolidado em `13-reports/roadmap.md` cobrindo:
