@@ -22,13 +22,13 @@ export function Contact() {
             href="mailto:jenniferdsbaumgart@gmail.com"
             className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-accent-500"
           >
-            Get in Touch
+            Join the waitlist
             <ArrowUpRight size={16} />
           </a>
         </div>
 
         <p className="mt-8 text-sm text-zinc-500">
-          Enterprise enquiries &middot; Technical collaboration
+          Early access &middot; Enterprise enquiries
         </p>
       </div>
     </section>

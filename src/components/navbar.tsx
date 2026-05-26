@@ -20,7 +20,7 @@ export function Navbar() {
           href="#contact"
           className="rounded-lg bg-accent-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-accent-500"
         >
-          Get in Touch
+          Join the waitlist
         </a>
       </div>
     </nav>
