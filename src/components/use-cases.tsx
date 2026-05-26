@@ -1,37 +1,37 @@
-import { Building2, GraduationCap, Headset } from 'lucide-react';
+import { TrendingDown, Puzzle, ShieldCheck } from 'lucide-react';
 
 const cases = [
   {
-    icon: Building2,
-    title: 'Enterprise Knowledge Base',
-    audience: 'Corporates & Scale-ups',
+    icon: TrendingDown,
+    title: 'Cut support volume',
+    audience: 'Customer Ops & Support',
     points: [
-      'Centralise documentation, policies, and procedures across departments',
-      'AI-powered search lets employees find answers in seconds, not hours',
-      'Multi-tenant architecture supports multiple business units or clients',
-      'Auto-response rules deflect repetitive queries from support teams',
+      'Customers find answers in your help center instead of opening tickets',
+      'Every deflected reply cites the document that answered it — so your team knows what to improve',
+      'Replies in the customer’s language, not just yours',
+      'Confidence scores let you escalate to a human only when it matters',
     ],
   },
   {
-    icon: GraduationCap,
-    title: 'Academic & Research Institutions',
-    audience: 'Universities & Research Centres',
+    icon: Puzzle,
+    title: 'Self-service inside your product',
+    audience: 'Product & CX',
     points: [
-      'Index research papers, course materials, and institutional knowledge',
-      'RAG-powered Q&A grounded in actual sources with citations',
-      'Multi-language support for international student bodies',
-      'Embeddable widget for student portals and library systems',
+      'Embed the widget where users get stuck — onboarding, settings, checkout',
+      'Answers come from your own docs and policies, never made up',
+      'See which questions are spiking so product knows what to fix next',
+      'Per-customer isolation — each user only sees what they’re entitled to',
     ],
   },
   {
-    icon: Headset,
-    title: 'Customer Support Intelligence',
-    audience: 'SaaS & Service Companies',
+    icon: ShieldCheck,
+    title: 'Audit-ready AI',
+    audience: 'Compliance & Operations',
     points: [
-      'Generate FAQs automatically from support tickets and documentation',
-      'CSAT surveys and analytics track customer satisfaction over time',
-      'Follow-up CRM with campaigns and journey builder for engagement',
-      'Conversation flows build guided troubleshooting for chatbots',
+      'Every answer logged with its source — down to the version of the cited document',
+      'Retain Q&A history for compliance reviews and dispute resolution',
+      'Show the board that AI is grounded — not a generative guess',
+      'Tenant-isolated logs — never blend one customer’s data with another’s',
     ],
   },
 ];
@@ -45,8 +45,8 @@ export function UseCases() {
             Use Cases
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Built for organisations that take
-            <br className="hidden sm:block" /> knowledge seriously
+            Three ways customer ops teams
+            <br className="hidden sm:block" /> put Noesis to work.
           </h2>
         </div>
 
@@ -57,7 +57,7 @@ export function UseCases() {
               className="flex flex-col rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-7"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-accent-950 text-accent-400">
-                <c.icon size={22} />
+                <c.icon size={22} aria-hidden />
               </div>
               <h3 className="mt-5 text-lg font-semibold">{c.title}</h3>
               <p className="mt-1 text-sm text-accent-400">{c.audience}</p>
