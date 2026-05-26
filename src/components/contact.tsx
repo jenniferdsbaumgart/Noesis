@@ -12,32 +12,23 @@ export function Contact() {
           Interested in Noesis?
         </h2>
         <p className="mt-4 text-zinc-400">
-          Whether you&apos;re exploring knowledge management for your organisation,
-          evaluating the platform for academic research, or interested in the
-          engineering behind it &mdash; we&apos;d love to hear from you.
+          Noesis is currently in pre-launch. Join the waitlist to be notified
+          when the platform opens for early access, or reach out directly
+          if you&apos;d like to talk about your use case.
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <a
-            href="mailto:contact@noesis-platform.io"
+            href="mailto:jenniferdsbaumgart@gmail.com"
             className="inline-flex items-center gap-2 rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-accent-500"
           >
             Get in Touch
             <ArrowUpRight size={16} />
           </a>
-          <a
-            href="https://github.com/your-org/noesis"
-            className="inline-flex items-center gap-2 rounded-lg border border-zinc-800 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-zinc-600 hover:text-white"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on GitHub
-            <ArrowUpRight size={16} />
-          </a>
         </div>
 
-        <p className="mt-8 text-sm text-zinc-600">
-          Enterprise enquiries &middot; Academic partnerships &middot; Technical collaboration
+        <p className="mt-8 text-sm text-zinc-500">
+          Enterprise enquiries &middot; Technical collaboration
         </p>
       </div>
     </section>

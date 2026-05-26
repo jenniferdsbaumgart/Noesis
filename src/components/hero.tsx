@@ -27,7 +27,7 @@ export function Hero() {
             href="#contact"
             className="rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-accent-500"
           >
-            Request a Demo
+            Join the waitlist
           </a>
           <a
             href="#architecture"
