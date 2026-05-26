@@ -1,141 +1,114 @@
+import {
+  BookOpen,
+  Sparkles,
+  MessageCircle,
+  BadgeCheck,
+  Ban,
+  Building2,
+  ScrollText,
+} from 'lucide-react';
+
+const steps = [
+  {
+    icon: BookOpen,
+    title: 'Your sources',
+    description:
+      'Connect your help docs, FAQs, policies, and knowledge base — wherever they live today.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Indexed semantically',
+    description:
+      'Noesis reads your content the way a person would — understanding meaning, not matching keywords.',
+  },
+  {
+    icon: MessageCircle,
+    title: 'Customer asks',
+    description:
+      'In your widget, your app, or your support tool — in any of the supported languages.',
+  },
+  {
+    icon: BadgeCheck,
+    title: 'Answer with citation',
+    description:
+      'Grounded in your own documents, with every source named so your team can verify it.',
+  },
+];
+
+const reassurances = [
+  {
+    icon: Ban,
+    title: 'Doesn’t make things up',
+    description:
+      'If the answer isn’t in your documents, Noesis says so — instead of guessing. The most important answer is sometimes “I don’t know.”',
+  },
+  {
+    icon: Building2,
+    title: 'Stays in its lane',
+    description:
+      'Every customer’s knowledge base is isolated. Their users see only what they’re entitled to — never another tenant’s data.',
+  },
+  {
+    icon: ScrollText,
+    title: 'Defensible by compliance',
+    description:
+      'Every question, answer, and source citation is retained. Audit trails are exportable on demand for compliance reviews.',
+  },
+];
+
 export function Architecture() {
   return (
-    <section id="architecture" className="relative px-6 py-28">
+    <section id="how-it-works" className="relative px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-sm font-medium uppercase tracking-widest text-accent-400">
-            Architecture
+            How it works
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-            Built for production, not prototypes
+            From your docs to a cited answer.
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-zinc-400">
-            Monorepo architecture with clear separation between API, dashboard,
-            widget, and shared packages. Every layer is typed, tested, and isolated.
+            Four steps. No black box.
           </p>
         </div>
 
-        <div className="mt-16 overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
-          <div className="border-b border-zinc-800 px-6 py-3">
-            <span className="text-xs font-medium text-zinc-500 font-mono">system-overview</span>
-          </div>
-          <div className="p-6 font-mono text-sm leading-loose">
-            {/* Layer diagram */}
-            <div className="space-y-4">
-              {/* Clients */}
+        <ol className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step, idx) => (
+            <li
+              key={step.title}
+              className="relative rounded-2xl border border-zinc-800/60 bg-zinc-900/40 p-6"
+            >
               <div className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-right text-zinc-600">clients</span>
-                <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="indigo">Next.js Dashboard</Tag>
-                  <Tag colour="indigo">Lit Widget</Tag>
-                  <Tag colour="indigo">External API</Tag>
-                </div>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent-500/30 bg-accent-950/60 text-xs font-semibold text-accent-300">
+                  {idx + 1}
+                </span>
+                <step.icon size={20} className="text-accent-400" aria-hidden />
               </div>
+              <h3 className="mt-4 text-base font-semibold tracking-tight">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
 
-              <Divider />
-
-              {/* API */}
-              <div className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-right text-zinc-600">api</span>
-                <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="violet">NestJS</Tag>
-                  <Tag colour="violet">Guards &amp; RBAC</Tag>
-                  <Tag colour="violet">21 Modules</Tag>
-                  <Tag colour="violet">209 Endpoints</Tag>
-                </div>
-              </div>
-
-              <Divider />
-
-              {/* Services */}
-              <div className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-right text-zinc-600">services</span>
-                <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="emerald">RAG Engine</Tag>
-                  <Tag colour="emerald">Search (hybrid)</Tag>
-                  <Tag colour="emerald">AI Generation</Tag>
-                  <Tag colour="emerald">Sync Workers</Tag>
-                </div>
-              </div>
-
-              <Divider />
-
-              {/* Data */}
-              <div className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-right text-zinc-600">data</span>
-                <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="amber">PostgreSQL + pgvector</Tag>
-                  <Tag colour="amber">Redis + BullMQ</Tag>
-                  <Tag colour="amber">MinIO (S3)</Tag>
-                  <Tag colour="amber">30 Models</Tag>
-                </div>
-              </div>
-
-              <Divider />
-
-              {/* Packages */}
-              <div className="flex items-center gap-3">
-                <span className="w-28 shrink-0 text-right text-zinc-600">packages</span>
-                <div className="flex flex-1 flex-wrap gap-2">
-                  <Tag colour="zinc">@noesis/rag</Tag>
-                  <Tag colour="zinc">@noesis/connectors</Tag>
-                  <Tag colour="zinc">@noesis/shared</Tag>
-                </div>
-              </div>
+        <div className="mt-12 grid gap-4 sm:grid-cols-3">
+          {reassurances.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-5"
+            >
+              <item.icon size={18} className="text-accent-400" aria-hidden />
+              <h3 className="mt-3 text-sm font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                {item.description}
+              </p>
             </div>
-          </div>
-        </div>
-
-        {/* Key architectural decisions */}
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          <DecisionCard
-            title="Row-Level Multi-Tenancy"
-            description="OrganisationGuard enforces tenant isolation at the request level. Every query is scoped. No shared data leakage."
-          />
-          <DecisionCard
-            title="Language-Aware Search"
-            description="PostgreSQL regconfigs dynamically resolve per request. Full-text search respects morphology for each of the 5 supported languages."
-          />
-          <DecisionCard
-            title="Shared Type System"
-            description="@noesis/shared provides types, validators, and constants across all apps. Single source of truth, enforced at compile time."
-          />
+          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-const colourMap: Record<string, string> = {
-  indigo: 'border-indigo-500/20 bg-indigo-950/50 text-indigo-300',
-  violet: 'border-violet-500/20 bg-violet-950/50 text-violet-300',
-  emerald: 'border-emerald-500/20 bg-emerald-950/50 text-emerald-300',
-  amber: 'border-amber-500/20 bg-amber-950/50 text-amber-300',
-  zinc: 'border-zinc-600/30 bg-zinc-800/50 text-zinc-300',
-};
-
-function Tag({ children, colour }: { children: React.ReactNode; colour: string }) {
-  return (
-    <span className={`rounded-md border px-2.5 py-1 text-xs ${colourMap[colour]}`}>
-      {children}
-    </span>
-  );
-}
-
-function Divider() {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-28 shrink-0" />
-      <div className="h-4 border-l border-dashed border-zinc-700 ml-4" />
-    </div>
-  );
-}
-
-function DecisionCard({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="rounded-xl border border-zinc-800/60 bg-zinc-900/40 p-5">
-      <h3 className="text-sm font-semibold">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-zinc-400">{description}</p>
-    </div>
   );
 }

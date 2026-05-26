@@ -11,7 +11,7 @@ export function Footer() {
 
         <div className="flex items-center gap-6 text-sm text-zinc-600">
           <a href="#features" className="transition hover:text-zinc-400">Features</a>
-          <a href="#architecture" className="transition hover:text-zinc-400">Architecture</a>
+          <a href="#how-it-works" className="transition hover:text-zinc-400">How it works</a>
           <a href="#use-cases" className="transition hover:text-zinc-400">Use Cases</a>
           <a href="#contact" className="transition hover:text-zinc-400">Contact</a>
         </div>

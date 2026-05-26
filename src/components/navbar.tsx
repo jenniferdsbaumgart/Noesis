@@ -11,7 +11,7 @@ export function Navbar() {
 
         <div className="hidden items-center gap-8 text-sm text-zinc-400 md:flex">
           <a href="#features" className="transition hover:text-white">Features</a>
-          <a href="#architecture" className="transition hover:text-white">Architecture</a>
+          <a href="#how-it-works" className="transition hover:text-white">How it works</a>
           <a href="#use-cases" className="transition hover:text-white">Use Cases</a>
           <a href="#stack" className="transition hover:text-white">Stack</a>
         </div>
