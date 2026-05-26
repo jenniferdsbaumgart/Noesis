@@ -60,7 +60,7 @@ export function Hero() {
             </p>
             <p className="text-zinc-600">{'}'}</p>
             <div className="mt-3 border-t border-zinc-800 pt-3">
-              <p className="text-zinc-500">// AI-generated answer with source citations</p>
+              <p className="text-zinc-500">{'// AI-generated answer with source citations'}</p>
               <p className="text-zinc-400">
                 <span className="text-accent-300">&quot;answer&quot;</span>:{' '}
                 <span className="text-emerald-400">&quot;Refunds are processed within 5-7 working days...&quot;</span>
