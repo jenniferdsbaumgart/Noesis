@@ -1,74 +1,90 @@
+import { FileText, Search } from 'lucide-react';
+
 export function Hero() {
   return (
     <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden px-6 pt-16 grid-pattern">
-      {/* Glow */}
       <div className="pointer-events-none absolute top-1/4 left-1/2 -translate-x-1/2 h-[500px] w-[800px] rounded-full bg-accent-600/10 blur-[120px]" />
 
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent-500/20 bg-accent-950/50 px-4 py-1.5 text-sm text-accent-300">
           <span className="h-1.5 w-1.5 rounded-full bg-accent-400" />
-          Multi-tenant &middot; RAG-powered &middot; 5 languages
+          Grounded &middot; Source-cited &middot; Multi-language
         </div>
 
         <h1 className="text-balance text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-          Strategic Knowledge
+          Knowledge that answers.
           <br />
-          <span className="gradient-text">Platform with AI</span>
+          <span className="gradient-text">Not just stores.</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 sm:text-xl">
-          Noesis unifies semantic search, AI-generated answers, and multi-source
-          data integration into a single platform &mdash; built for organisations
-          that need knowledge to be findable, not just stored.
+          Cut support volume with AI that answers from your own docs &mdash;
+          and cites every source, so your team can stand behind what
+          customers see.
         </p>
 
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+        <div className="mt-10 flex justify-center">
           <a
             href="#contact"
             className="rounded-lg bg-accent-600 px-6 py-3 text-sm font-medium text-white transition hover:bg-accent-500"
           >
             Join the waitlist
           </a>
-          <a
-            href="#architecture"
-            className="rounded-lg border border-zinc-800 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-zinc-600 hover:text-white"
-          >
-            Explore the Architecture
-          </a>
         </div>
 
-        {/* Terminal preview */}
-        <div className="glow mx-auto mt-16 max-w-2xl overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950">
-          <div className="flex items-center gap-2 border-b border-zinc-800 px-4 py-3">
-            <span className="h-3 w-3 rounded-full bg-zinc-700" />
-            <span className="h-3 w-3 rounded-full bg-zinc-700" />
-            <span className="h-3 w-3 rounded-full bg-zinc-700" />
-            <span className="ml-3 text-xs text-zinc-500 font-mono">noesis-search</span>
+        <div className="glow mx-auto mt-16 max-w-2xl overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950 text-left">
+          <div className="flex items-center gap-3 border-b border-zinc-800 px-5 py-4">
+            <Search size={16} className="text-zinc-500" aria-hidden />
+            <p className="text-sm text-zinc-300">
+              How does the refund policy work?
+            </p>
           </div>
-          <div className="p-5 text-left font-mono text-sm leading-relaxed">
-            <p className="text-zinc-500">
-              <span className="text-accent-400">POST</span> /api/v1/search/rag
+
+          <div className="px-5 py-5">
+            <p className="text-sm leading-relaxed text-zinc-200">
+              Refunds are processed within 5&ndash;7 working days from the date
+              your request is approved by the support team.
             </p>
-            <p className="mt-2 text-zinc-600">{'{'}</p>
-            <p className="text-zinc-400">
-              {'  '}<span className="text-accent-300">&quot;query&quot;</span>:{' '}
-              <span className="text-emerald-400">&quot;How does the refund policy work?&quot;</span>
-            </p>
-            <p className="text-zinc-400">
-              {'  '}<span className="text-accent-300">&quot;language&quot;</span>:{' '}
-              <span className="text-emerald-400">&quot;en-GB&quot;</span>
-            </p>
-            <p className="text-zinc-600">{'}'}</p>
-            <div className="mt-3 border-t border-zinc-800 pt-3">
-              <p className="text-zinc-500">{'// AI-generated answer with source citations'}</p>
-              <p className="text-zinc-400">
-                <span className="text-accent-300">&quot;answer&quot;</span>:{' '}
-                <span className="text-emerald-400">&quot;Refunds are processed within 5-7 working days...&quot;</span>
+
+            <div className="mt-5 border-t border-zinc-800 pt-4">
+              <p className="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-500">
+                3 sources cited
               </p>
-              <p className="text-zinc-400">
-                <span className="text-accent-300">&quot;sources&quot;</span>:{' '}
-                <span className="text-zinc-500">[3 documents, 94% confidence]</span>
-              </p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2 text-zinc-400">
+                  <FileText
+                    size={14}
+                    className="mt-0.5 shrink-0 text-accent-400"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="text-zinc-200">Refund Policy v2.1</span>
+                    <span className="text-zinc-500"> &middot; &sect;4 Processing timelines</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-zinc-400">
+                  <FileText
+                    size={14}
+                    className="mt-0.5 shrink-0 text-accent-400"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="text-zinc-200">Support SLA</span>
+                    <span className="text-zinc-500"> &middot; Refund handling</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-2 text-zinc-400">
+                  <FileText
+                    size={14}
+                    className="mt-0.5 shrink-0 text-accent-400"
+                    aria-hidden
+                  />
+                  <span>
+                    <span className="text-zinc-200">FAQ</span>
+                    <span className="text-zinc-500"> &middot; What if my refund is late?</span>
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
